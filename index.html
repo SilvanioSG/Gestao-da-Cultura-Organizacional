@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Executivo: Gestão da Cultura Organizacional e Estratégica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: rgb(39, 98, 141);
+            --primary-dark: rgb(30, 75, 110);
+            --primary-light: rgba(39, 98, 141, 0.1);
+            --accent-color: #f0f4f8;
+            --text-color: #333;
+            --light-text: #666;
+            --bg-color: #fcfcfc;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .header-profile {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .profile-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .profile-info h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .profile-info p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .header-title {
+            text-align: center;
+            flex-grow: 1;
+            margin: 0.5rem 0;
+            order: 3;
+            width: 100%;
+        }
+
+        .header-title h1 {
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .header-title .subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .whatsapp-link {
+            background-color: #25D366;
+            color: white;
+            padding: 0.6rem 1rem;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .whatsapp-link:hover {
+            background-color: #20bd5a;
+            transform: translateY(-2px);
+        }
+
+        /* --- NAVIGATION --- */
+        .navigation {
+            background-color: white;
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .nav-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            gap: 0.8rem;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--primary-color);
+            padding: 0.5rem 0.8rem;
+            border-radius: 30px;
+            transition: var(--transition);
+            font-size: 0.85rem;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        /* --- MAIN CONTAINER --- */
+        .container {
+            max-width: 1200px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+            display: block;
+        }
+
+        .main-content {
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        h2 i {
+            font-size: 1.3rem;
+        }
+
+        h3 {
+            color: var(--primary-dark);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h3 i {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        h4 {
+            color: var(--primary-dark);
+            margin: 1.2rem 0 0.7rem;
+            font-size: 1.1rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        ul, ol {
+            margin-left: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.7rem;
+            position: relative;
+            padding-left: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* --- COMPONENTES ESPECÍFICOS --- */
+        .intro-box {
+            background-color: var(--accent-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            position: relative;
+        }
+
+        .intro-box::before {
+            content: '"';
+            position: absolute;
+            top: 0.5rem;
+            left: 1rem;
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .intro-box p {
+            font-style: italic;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pillar-item, .interview-question, .metric-item, .reputation-item, .legacy-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pillar-item:last-child, .interview-question:last-child, .metric-item:last-child, .reputation-item:last-child, .legacy-item:last-child {
+            border-bottom: none;
+        }
+
+        .pillar-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-icon {
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .practical-action {
+            background-color: #f9f9f9;
+            padding: 1.2rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--success-color);
+            margin-top: 1.2rem;
+            position: relative;
+        }
+
+        .practical-action::before {
+            content: 'AÇÃO PRÁTICA';
+            position: absolute;
+            top: -10px;
+            left: 1rem;
+            background-color: var(--success-color);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        /* Tabela Estratégica */
+        .strategy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            display: block;
+            overflow-x: auto;
+        }
+
+        .strategy-table th, .strategy-table td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #eaeaea;
+            min-width: 150px;
+        }
+
+        .strategy-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .strategy-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .strategy-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Sinais de Alerta */
+        .alert-box {
+            background-color: #fff5f5;
+            border: 1px solid var(--danger-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            position: relative;
+        }
+        .alert-box::before {
+            content: '⚠️';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            font-size: 1.5rem;
+            background: white;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .alert-box h2 { color: var(--danger-color); }
+
+        /* Realidade Inconveniente */
+        .reality-box {
+            background-color: #fff8e1;
+            border: 1px solid var(--warning-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            position: relative;
+        }
+        .reality-box::before {
+            content: '⚡';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            font-size: 1.5rem;
+            background: white;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .reality-box h2 { color: var(--warning-color); }
+
+        /* Resumo Visual (Triângulo CSS) */
+        .visual-summary-container {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 0;
+            position: relative;
+            height: 250px;
+        }
+
+        .triangle-point {
+            position: absolute;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            background: white;
+            padding: 0.6rem 1rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            z-index: 2;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 150px;
+            font-size: 0.9rem;
+        }
+
+        .top-point { top: 0; left: 50%; transform: translateX(-50%); }
+        .left-point { bottom: 0; left: 5%; }
+        .right-point { bottom: 0; right: 5%; }
+        .center-point {
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1rem;
+            padding: 1rem 1.5rem;
+        }
+
+        .triangle-shape {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 140px solid transparent;
+            border-right: 140px solid transparent;
+            border-bottom: 200px solid var(--primary-light);
+            z-index: 1;
+        }
+
+        /* Entrevista Signals */
+        .signal-green { color: var(--success-color); font-weight: bold; }
+        .signal-red { color: var(--danger-color); font-weight: bold; }
+
+        /* Sidebar */
+        .sidebar-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-box h3 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.8rem;
+        }
+
+        .quick-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quick-links li {
+            margin-bottom: 0.8rem;
+            padding: 0;
+        }
+
+        .quick-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+            color: var(--text-color);
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .quick-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .quick-links i {
+            color: var(--primary-color);
+            width: 20px;
+        }
+
+        .metric-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+
+        .metric-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .metric-info h4 {
+            margin: 0 0 0.3rem;
+            font-size: 1rem;
+        }
+
+        .metric-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        /* Novo: Indicadores de Performance */
+        .kpi-indicator {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .kpi-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .kpi-info h4 {
+            margin: 0 0 0.3rem;
+            font-size: 1rem;
+        }
+
+        .kpi-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        /* Novo: Impacto Financeiro */
+        .financial-impact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .impact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .impact-card h4 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 0.5rem 0;
+        }
+
+        .legacy-principles {
+            background: var(--accent-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+        }
+
+        /* Novo: Citação Inspiradora */
+        .inspiration-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .inspiration-box::before {
+            content: '"';
+            position: absolute;
+            top: 0.5rem;
+            left: 1rem;
+            font-size: 4rem;
+            color: rgba(255,255,255,0.2);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .inspiration-box p {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .inspiration-box .author {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-link {
+            background-color: rgba(255,255,255,0.1);
+            padding: 0.7rem 1.2rem;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+        .footer-link:hover { 
+            background-color: rgba(255,255,255,0.2); 
+            transform: translateY(-2px);
+        }
+
+        /* Back to top button */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 1.2rem;
+            border: none;
+            outline: none;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: var(--transition);
+        }
+        #backToTop:hover { 
+            background-color: var(--primary-dark); 
+            transform: translateY(-3px);
+        }
+
+        /* --- MEDIA QUERIES PARA DISPOSITIVOS MAIORES --- */
+        @media (min-width: 769px) {
+            body {
+                font-size: 16px;
+            }
+            
+            header {
+                padding: 1.5rem 2rem;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+            
+            .profile-img {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .header-title {
+                order: 0;
+                width: auto;
+                margin: 0 1rem;
+            }
+            
+            .header-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 300px;
+                gap: 2rem;
+                padding: 0 1.5rem;
+            }
+            
+            .sidebar {
+                margin-top: 0;
+            }
+            
+            section {
+                padding: 2.5rem;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .visual-summary-container {
+                height: 320px;
+            }
+            
+            .triangle-shape {
+                border-left: 180px solid transparent;
+                border-right: 180px solid transparent;
+                border-bottom: 250px solid var(--primary-light);
+            }
+            
+            .triangle-point {
+                max-width: 180px;
+                font-size: 1rem;
+            }
+            
+            .left-point { left: 10%; }
+            .right-point { right: 10%; }
+        }
+
+        /* Ajustes para telas muito pequenas */
+        @media (max-width: 480px) {
+            body {
+                font-size: 17px;
+            }
+            
+            .header-title h1 {
+                font-size: 1.3rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.6rem;
+            }
+            
+            section {
+                padding: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+            }
+            
+            .triangle-shape {
+                border-left: 100px solid transparent;
+                border-right: 100px solid transparent;
+                border-bottom: 160px solid var(--primary-light);
+            }
+            
+            .visual-summary-container {
+                height: 200px;
+            }
+            
+            .triangle-point {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.8rem;
+                max-width: 120px;
+            }
+            
+            .center-point {
+                font-size: 0.9rem;
+                padding: 0.8rem 1.2rem;
+            }
+            
+            .financial-impact {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Melhorias de acessibilidade e usabilidade */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+            }
+        }
+
+        /* Melhoria de foco para acessibilidade */
+        a:focus, button:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-profile">
+            <img src="SG_Executivo.PNG" alt="Foto de Silvanio Gois" class="profile-img">
+            <div class="profile-info">
+                <h2>Silvanio Gois</h2>
+                <p>Gestor Estrategista</p>
+            </div>
+        </div>
+        <div class="header-title">
+            <h1>Guia Executivo: Gestão da Cultura Organizacional</h1>
+            <p class="subtitle">Framework baseado no modelo de Partnership do BTG Pactual</p>
+        </div>
+        <a href="https://wa.me/5513988301094" target="_blank" class="whatsapp-link">
+            <i class="fab fa-whatsapp"></i>
+            Contato
+        </a>
+    </header>
+
+    <!-- Navegação -->
+    <div class="navigation">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#introducao" class="active"><i class="fas fa-home"></i> Introdução</a>
+                <a href="#pilares"><i class="fas fa-columns"></i> 4 Pilares</a>
+                <a href="#estrategia"><i class="fas fa-chess-board"></i> Estratégia</a>
+                <a href="#ferramentas"><i class="fas fa-tools"></i> Ferramentas</a>
+                <a href="#reputacao"><i class="fas fa-crown"></i> Reputação</a>
+                <a href="#realidade"><i class="fas fa-bolt"></i> Realidade</a>
+                <a href="#impacto"><i class="fas fa-chart-line"></i> Impacto P&L</a>
+                <a href="#legado"><i class="fas fa-mountain"></i> Legado</a>
+                <a href="#framework"><i class="fas fa-chess-queen"></i> Framework</a>
+                <a href="#entrevista"><i class="fas fa-user-check"></i> Entrevista</a>
+                <a href="#metricas"><i class="fas fa-chart-bar"></i> Métricas</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <main class="main-content">
+
+            <!-- Introdução -->
+            <section id="introducao">
+                <div class="intro-box">
+                    <p>Este guia executivo foi desenvolvido para líderes e gestores que enfrentam o desafio de alinhar suas equipes ao modelo de alta performance baseado no "Jeito BTG" de trabalhar. A cultura descrita aqui é amplamente reconhecida como a maior vantagem competitiva do banco, fundamentada no modelo de <strong>Partnership</strong> e em uma <strong>Meritocracia agressiva</strong>. Utilize este material como sua bússola diária de gestão.</p>
+                </div>
+
+                <h2><i class="fas fa-bullseye"></i> O Núcleo da Cultura: Partnership Model</h2>
+                <p>A premissa fundamental que deve permear todas as suas decisões e ações é: <strong>Aja como dono.</strong></p>
+                <p>No nosso ecossistema, os colaboradores não são apenas funcionários; são potenciais sócios. Sua gestão deve ser orientada a transformar o "capital humano" do seu time em "capital societário" real, criando um ambiente onde a excelência é recompensada e a mediocridade não é tolerada.</p>
+                
+                <h3><i class="fas fa-lightbulb"></i> Princípios Fundamentais</h3>
+                <ul>
+                    <li><strong>Propriedade intelectual e emocional:</strong> Cada membro deve sentir-se dono dos resultados, não apenas executor de tarefas.</li>
+                    <li><strong>Alinhamento de incentivos:</strong> A remuneração e progressão devem refletir diretamente o valor gerado.</li>
+                    <li><strong>Responsabilidade integral:</strong> Decisões devem considerar impactos de longo prazo, não apenas resultados imediatos.</li>
+                </ul>
+            </section>
+
+            <!-- Parte 1: Os 4 Pilares -->
+            <section id="pilares">
+                <h2><i class="fas fa-columns"></i> 1. Os 4 Pilares Comportamentais Inegociáveis</h2>
+                <p>Para gerir a cultura no dia a dia, você deve cobrar e, acima de tudo, exemplificar estes quatro comportamentos. Eles constituem nosso "Hard Code" organizacional.</p>
+
+                <div class="pillar-item">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>1. Meritocracia Obsessiva</h3>
+                    </div>
+                    <p>Não há espaço para promoções por tempo de casa ou relações pessoais. A progressão ocorre exclusivamente com base em entrega mensurável e impacto nos resultados.</p>
+                    <p><strong>Na Prática:</strong> Avalie seu time baseando-se puramente em KPIs claros e no impacto direto no P&L (Profit and Loss). Estabeleça métricas transparentes que todos compreendam.</p>
+                    <div class="practical-action">
+                        <strong>Sua Ação como Líder:</strong> Recompense os <em>outliers</em> (os excepcionais) desproporcionalmente. Quem entrega muito mais, deve ganhar muito mais. Sem medo de criar disparidades justificadas por desempenho.
+                    </div>
+                </div>
+
+                <div class="pillar-item">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>2. Teamwork (Trabalho em Equipe)</h3>
+                    </div>
+                    <p>Apesar da agressividade individual na busca por resultados, operamos como uma unidade integrada. Ninguém é maior que a instituição.</p>
+                    <p><strong>Na Prática:</strong> Silos departamentais são proibidos. Se uma área vizinha precisa de ajuda para fechar um <em>deal</em> que beneficia o banco, sua área deve priorizar esse suporte imediatamente.</p>
+                    <div class="practical-action">
+                        <strong>Sua Ação como Líder:</strong> Elimine a "política de escritório". Se identificar alguém retendo informação para ganho pessoal ou criando barreiras à colaboração, corte o mal pela raiz imediatamente.
+                    </div>
+                </div>
+
+                <div class="pillar-item">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">
+                            <i class="fas fa-fist-raised"></i>
+                        </div>
+                        <h3>3. Hard Work & Resiliência</h3>
+                    </div>
+                    <p>Nosso ambiente é de alta pressão por definição. A cultura valoriza quem "aguenta o tranco" e mantém a excelência técnica sob estresse.</p>
+                    <p><strong>Na Prática:</strong> Disponibilidade e intensidade. O ritmo é ditado pela oportunidade de mercado que surge, não pelo relógio de ponto. Espera-se proatividade e energia sustentada.</p>
+                    <div class="practical-action">
+                        <strong>Sua Ação como Líder:</strong> Lidere pelo exemplo. Esteja presente, acessível e "na trincheira" com a equipe nos momentos críticos. Demonstre resiliência sob pressão.
+                    </div>
+                </div>
+
+                <div class="pillar-item">
+                    <div class="pillar-header">
+                        <div class="pillar-icon">
+                            <i class="fas fa-chess-knight"></i>
+                        </div>
+                        <h3>4. Visão de Longo Prazo (Skin in the Game)</h3>
+                    </div>
+                    <p>Decisões não são tomadas para bater a meta do trimestre, mas para garantir a perpetuidade do banco. Todos devem ter "peixe na game".</p>
+                    <p><strong>Na Prática:</strong> Evite a todo custo ganhos rápidos que coloquem a reputação ou o capital do banco em risco excessivo. Pense em ciclos de 5-10 anos, não trimestres.</p>
+                    <div class="practical-action">
+                        <strong>Sua Ação como Líder:</strong> Ao propor um negócio, pergunte ao seu colaborador olhando nos olhos: <em>"Se o dinheiro fosse 100% seu, você faria esse investimento?"</em> Use esta pergunta como filtro decisório.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Parte 2: Estratégia -->
+            <section id="estrategia">
+                <h2><i class="fas fa-chess-board"></i> 2. Estratégia: O Modelo de Negócio Integrado</h2>
+                <p>A gestão estratégica deve focar na sinergia total entre as áreas. Lembre-se sempre: o cliente não é da sua área, o cliente é do banco.</p>
+
+                <table class="strategy-table">
+                    <thead>
+                        <tr>
+                            <th>Pilar Estratégico</th>
+                            <th>O que você, Gestor, deve fazer</th>
+                            <th>Métrica de Sucesso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cross-Selling</strong></td>
+                            <td>Incentivar ativamente que o time de <em>Wealth</em> fale com o de <em>Investment Banking</em>, e vice-versa. O cliente deve consumir todo o ecossistema do banco.</td>
+                            <td>Nº de produtos por cliente; Receita cruzada entre áreas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Agilidade (Flat Structure)</strong></td>
+                            <td>Manter a estrutura horizontal. Decisões devem ser rápidas. O acesso aos sócios seniores deve ser fácil se o assunto for relevante para o negócio.</td>
+                            <td>Tempo de decisão; Nível de hierarquia para aprovações</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Inovação (Digital)</strong></td>
+                            <td>Trabalhar para integrar a cultura tradicional e sofisticada de banco de investimento com a escalabilidade e velocidade do varejo digital.</td>
+                            <td>% de receita de produtos digitais; Velocidade de lançamento</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3><i class="fas fa-sync-alt"></i> Ciclo de Implementação Estratégica</h3>
+                <ol>
+                    <li><strong>Diagnóstico:</strong> Avalie o alinhamento atual da sua área com os pilares culturais</li>
+                    <li><strong>Priorização:</strong> Identifique as 2-3 iniciativas de maior impacto para aproximar sua gestão do modelo</li>
+                    <li><strong>Execução:</strong> Implemente mudanças com comunicação clara e expectativas definidas</li>
+                    <li><strong>Avaliação:</strong> Meça resultados e ajuste a rota conforme necessário</li>
+                </ol>
+
+                <div class="practical-action">
+                    <strong>Capital Intellectual Velocity:</strong> No BTG, medimos não apenas o capital intelectual, mas a velocidade com que ele se move entre áreas. Um deal de M&A que beneficia o Private Banking deve ser compartilhado em horas, não dias.
+                </div>
+            </section>
+
+            <!-- Parte 3: Ferramentas Práticas -->
+            <section id="ferramentas">
+                <h2><i class="fas fa-tools"></i> 3. Ferramentas Práticas de Gestão (O "How-To")</h2>
+                <p>Use este checklist prático para manter a máquina rodando conforme a cultura:</p>
+
+                <h3><i class="fas fa-user-plus"></i> Recrutamento (A Porta de Entrada)</h3>
+                <blockquote>"Contrate pessoas melhores que você."</blockquote>
+                <ul>
+                    <li><strong>Busque o perfil "PSD":</strong> <em>Poor, Smart, Deep desire to get rich/succeed</em>. Precisamos de pessoas com fome genuína de crescimento.</li>
+                    <li><strong>Teste de Cultura acima de tudo:</strong> Mais importante que a técnica (que se ensina) é o <em>fit</em>. O candidato aguenta franqueza radical? Tem ambição real de dono?</li>
+                    <li><strong>Valide referências com foco cultural:</strong> Ao checar referências, pergunte especificamente sobre resiliência, trabalho em equipe e orientação a resultados.</li>
+                </ul>
+
+                <h3><i class="fas fa-comments"></i> Feedback e Avaliação (A Manutenção)</h3>
+                <ul>
+                    <li><strong>Transparência Radical:</strong> Não espere o fim do ano. O feedback deve ser imediato, curto, duro se necessário, e direto ao ponto.</li>
+                    <li><strong>Curva Forçada:</strong> Identifique rapidamente os 20% inferiores. O modelo <em>up or out</em> (cresça ou saia) é uma realidade necessária para manter a barra alta.</li>
+                    <li><strong>Avaliação 360° com foco cultural:</strong> Inclua critérios específicos de avaliação dos pilares culturais no processo de feedback.</li>
+                </ul>
+
+                <h3><i class="fas fa-calendar-alt"></i> Rituais de Gestão</h3>
+                <ul>
+                    <li><strong>Reuniões Curtas e Objetivas:</strong> Evite PowerPoint excessivo. Foque em: números, riscos e próximos passos claros.</li>
+                    <li><strong>Mentoria Informal:</strong> Sócios seniores devem dedicar tempo real para formar os sócios juniores. A passagem de bastão é cultural e comportamental, não apenas técnica.</li>
+                    <li><strong>Revisões Trimestrais de Cultura:</strong> Reserve tempo específico para discutir o estado da cultura na sua área e ajustar práticas.</li>
+                </ul>
+            </section>
+
+            <!-- Parte 4: Reputação e Valor Intangível -->
+            <section id="reputacao">
+                <h2><i class="fas fa-crown"></i> 4. Reputação: O Ativo Mais Valioso</h2>
+                <p>A reputação não aparece no balanço patrimonial, mas é o ativo mais valioso que possuímos. Ela é construída diariamente, através de cada decisão, interação e entrega.</p>
+
+                <div class="reputation-item">
+                    <h3><i class="fas fa-gem"></i> O Valor da Reputação</h3>
+                    <p>Uma reputação sólida permite:</p>
+                    <ul>
+                        <li><strong>Atrair os melhores talentos:</strong> Profissionais de elite querem trabalhar em organizações de elite</li>
+                        <li><strong>Premium pricing:</strong> Clientes pagam mais por confiança e excelência comprovada</li>
+                        <li><strong>Resiliência em crises:</strong> Uma boa reputação funciona como um "colchão" em momentos difíceis</li>
+                        <li><strong>Acesso privilegiado:</strong> Oportunidades que não estão disponíveis para concorrentes</li>
+                    </ul>
+                </div>
+
+                <div class="reputation-item">
+                    <h3><i class="fas fa-shield-alt"></i> Protegendo a Reputação</h3>
+                    <p>A reputação é frágil - leva anos para construir e segundos para destruir. Proteja-a com:</p>
+                    <ul>
+                        <li><strong>Transparência radical:</strong> Erros acontecem; escondê-los é o verdadeiro problema</li>
+                        <li><strong>Padrões éticos inegociáveis:</strong> Nunca negocie valores por resultados financeiros</li>
+                        <li><strong>Responsabilidade pessoal:</strong> Cada colaborador é um guardião da reputação institucional</li>
+                        <li><strong>Visão de longo prazo:</strong> Decisões que protegem a reputação sempre prevalecem sobre ganhos de curto prazo</li>
+                    </ul>
+                </div>
+
+                <div class="practical-action">
+                    <strong>Teste da Reputação:</strong> Antes de qualquer decisão importante, pergunte-se: "Se esta ação fosse capa do Financial Times amanhã, eu me orgulharia?" Se a resposta for não, repense sua decisão.
+                </div>
+            </section>
+
+            <!-- Parte 5: Realidade Inconveniente -->
+            <section id="realidade" class="reality-box">
+                <h2><i class="fas fa-bolt"></i> 5. A Realidade Inconveniente</h2>
+                <p><strong>90% das empresas falham na implementação cultural porque:</strong></p>
+                <ul>
+                    <li>Focam em discursos, não em comportamentos mensuráveis</li>
+                    <li>Toleram mediocridade sob o pretexto de "transição"</li>
+                    <li>Não removem rapidamente os "cultural terrorists"</li>
+                    <li>Confundem consenso com compromisso</li>
+                </ul>
+                <div class="practical-action">
+                    <strong>No BTG, agimos diferente:</strong> Se um colaborador consistentemente entrega resultados mas destrói a cultura, ele é mais perigoso que um low-performer. Removemos em 30 dias.
+                </div>
+            </section>
+
+            <!-- Parte 6: Impacto no P&L -->
+            <section id="impacto">
+                <h2><i class="fas fa-chart-line"></i> 6. Impacto no P&L: A Conexão Direta</h2>
+                <p>A cultura não é um "projeto de RH" - é um driver direto de resultados financeiros. No BTG, comprovamos que:</p>
+                
+                <div class="financial-impact">
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="impact-info">
+                            <h4>+15-25%</h4>
+                            <p>ROE em áreas com cultura forte vs. áreas com cultura fraca</p>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="impact-info">
+                            <h4>40% menor</h4>
+                            <p>Turnover entre top performers em cultura consolidada</p>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="impact-info">
+                            <h4>2x mais rápida</h4>
+                            <p>Velocidade de execução em decisões estratégicas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practical-action">
+                    <strong>Equação BTG:</strong> Cultura Forte = Maior Retorno sobre Capital Intellectual + Menor Custo de Coordenação + Maior Velocidade de Aprendizado Organizacional
+                </div>
+            </section>
+
+            <!-- Parte 7: Construindo Legado -->
+            <section id="legado">
+                <h2><i class="fas fa-mountain"></i> 7. Construindo Instituição, Não Apenas Resultados</h2>
+                <p>O maior teste de um líder no BTG não é o P&L deste ano, mas a instituição que ele entrega para o próximo generation de partners.</p>
+                
+                <div class="legacy-principles">
+                    <h3><i class="fas fa-check-double"></i> Princípios de Legacy</h3>
+                    <ul>
+                        <li><strong>Succession Planning Obsessivo:</strong> Todo líder sênior deve ter 2-3 sucessores identificados e em desenvolvimento</li>
+                        <li><strong>Institutional Memory:</strong> Conhecimento crítico deve ser documentado e compartilhado, não retido individualmente</li>
+                        <li><strong>Brand Equity Multi-generational:</strong> Cada decisão deve fortalecer a marca para os próximos 20 anos</li>
+                        <li><strong>Talent Density Acceleration:</strong> A barra de contratação deve subir consistentemente</li>
+                    </ul>
+                </div>
+
+                <div class="practical-action">
+                    <strong>Teste do Legado:</strong> Avalie cada decisão importante perguntando: "Esta ação tornará a instituição mais forte daqui a 10 anos, ou apenas inflará resultados no próximo trimestre?"
+                </div>
+            </section>
+
+            <!-- Parte 8: Framework Decisório -->
+            <section id="framework">
+                <h2><i class="fas fa-chess-queen"></i> 8. Framework Decisório BTG</h2>
+                <p>Toda decisão significativa deve passar por este filtro:</p>
+                
+                <table class="strategy-table">
+                    <thead>
+                        <tr>
+                            <th>Dimensão</th>
+                            <th>Pergunta-Chave</th>
+                            <th>Threshold</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ROE</strong></td>
+                            <td>Retorno sobre capital > custo de oportunidade?</td>
+                            <td>20%+</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cultural Fit</strong></td>
+                            <td>Alinha e fortalece nossos 4 pilares?</td>
+                            <td>Não negociável</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Risk Adjusted</strong></td>
+                            <td>Risco reputacional aceitável?</td>
+                            <td>Zero tolerance para riscos reputacionais</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scalability</strong></td>
+                            <td>Pode crescer 10x sem proporcional complexity?</td>
+                            <td>Sim</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="practical-action">
+                    <strong>Regra Ouro:</strong> Se uma oportunidade falha em qualquer uma dessas dimensões, é <strong>NO GO</strong>. Disciplina supera oportunismo no longo prazo.
+                </div>
+            </section>
+
+            <!-- Parte 9: Roteiro de Entrevista -->
+            <section id="entrevista">
+                <h2><i class="fas fa-user-check"></i> 9. BÔNUS: Roteiro de Entrevista Focado em Cultura</h2>
+                <p>Preparei este roteiro para te ajudar a identificar os candidatos que têm o DNA do banco. Ele não substitui a entrevista técnica, mas serve como um filtro de barreira crucial: se não passar aqui, não sobreviverá à cultura.</p>
+                <div class="intro-box">
+                    <strong>Regra de Ouro:</strong> Procure por evidências concretas (fatos, dados, números), não intenções futuras. Use perguntas situacionais: <em>"Me conte sobre a vez que..."</em>.
+                </div>
+
+                <div class="interview-question">
+                    <h3><i class="fas fa-bullseye"></i> 1. Avaliando Ambição e Meritocracia (O Perfil "PSD")</h3>
+                    <p><em>O que buscamos: Fome de crescimento e inconformismo com a média.</em></p>
+                    <p><strong>Pergunta Sugerida:</strong> "Me conte sobre a conquista profissional da qual você mais se orgulha. Como você mediu esse sucesso?"</p>
+                    <ul>
+                        <li><span class="signal-green">✅ Sinal Verde:</span> Fala em números (gerou X de receita, economizou Y), compara seu resultado com a média para mostrar que superou, e demonstra orgulho pela entrega excepcional.</li>
+                        <li><span class="signal-red">🚩 Sinal Vermelho:</span> Respostas vagas ("melhorei o clima"), foca apenas no esforço e não no resultado final, ou atribui o sucesso apenas à sorte/terceiros.</li>
+                    </ul>
+                </div>
+
+                <div class="interview-question">
+                    <h3><i class="fas fa-fist-raised"></i> 2. Avaliando Resiliência e Hard Work</h3>
+                    <p><em>O que buscamos: Capacidade de operar em alta pressão sem perder a qualidade.</em></p>
+                    <p><strong>Pergunta Sugerida:</strong> "Descreva a situação de maior pressão que já viveu no trabalho. Como você reagiu quando as coisas saíram do controle?"</p>
+                    <ul>
+                        <li><span class="signal-green">✅ Sinal Verde:</span> Foco imediato na solução do problema. Demonstra energia alta ao narrar. Narra o caos com naturalidade ("faz parte do jogo").</li>
+                        <li><span class="signal-red">🚩 Sinal Vermelho:</span> Demonstra ansiedade excessiva ao relembrar, reclama da carga horária como algo injusto, ou diz que "quase teve um burnout" por motivos triviais.</li>
+                    </ul>
+                </div>
+
+                <div class="interview-question">
+                    <h3><i class="fas fa-users"></i> 3. Avaliando Teamwork e Quebra de Silos</h3>
+                    <p><em>O que buscamos: Visão institucional. O banco vem antes da área.</em></p>
+                    <p><strong>Pergunta Sugerida:</strong> "Já aconteceu de você ter que ajudar outra área ou colega, sabendo que isso atrasaria as suas próprias entregas e não te traria bônus direto? O que você fez?"</p>
+                    <ul>
+                        <li><span class="signal-green">✅ Sinal Verde:</span> Ajudou porque entendeu que era o melhor para a empresa como um todo. Entende que se o banco ganha, ele ganha a longo prazo.</li>
+                        <li><span class="signal-red">🚩 Sinal Vermelho:</span> "Não é minha função", "Cobrei um favor em troca", ou priorizou sua meta individual em detrimento de um problema grave do colega.</li>
+                    </ul>
+                </div>
+
+                <div class="interview-question">
+                    <h3><i class="fas fa-chess-knight"></i> 4. Avaliando Visão de Dono (Partnership)</h3>
+                    <p><em>O que buscamos: Responsabilidade extrema com o capital e a reputação (Skin in the Game).</em></p>
+                    <p><strong>Pergunta Sugerida (Cenário):</strong> "Imagine que você tem a chance de fechar um negócio que traria um bônus enorme para você este ano, mas existe um risco legal 'cinzento' que pode explodir daqui a 3 anos. O que você faz?"</p>
+                    <ul>
+                        <li><span class="signal-green">✅ Sinal Verde:</span> Não faz o negócio ou escala imediatamente para o comitê de risco/compliance. Pensa na perpetuidade do banco acima do ganho anual.</li>
+                        <li><span class="signal-red">🚩 Sinal Vermelho:</span> Tenta justificar o risco, foca no ganho de curto prazo, ou acha que "depois a gente resolve se der problema".</li>
+                    </ul>
+                </div>
+
+                <div class="practical-action" style="text-align: center;">
+                    <h3>Scorecard Rápido Pós-Entrevista</h3>
+                    <p>Ao final, faça a si mesmo estas 3 perguntas. Se a resposta for "Não" para qualquer uma, é <strong>No Hire</strong>.</p>
+                    <ol style="display: inline-block; text-align: left;">
+                        <li><strong>Teste do Aeroporto:</strong> Eu aguentaria ficar preso 4 horas num aeroporto com essa pessoa? (Fit pessoal/energia).</li>
+                        <li><strong>Teste do Sócio:</strong> Eu confiaria meu próprio dinheiro para essa pessoa gerir? (Confiança/Competência).</li>
+                        <li><strong>Teste da Barra:</strong> Essa pessoa é melhor do que a média das pessoas que já temos na equipe hoje? (Elevar a barra).</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Parte 10: Métricas e KPIs -->
+            <section id="metricas">
+                <h2><i class="fas fa-chart-line"></i> 10. Métricas e KPIs para Mensurar a Cultura</h2>
+                <p>Para gerenciar efetivamente a cultura, é essencial medir seu estado e evolução. Estas métricas ajudam a quantificar aspectos qualitativos da cultura organizacional.</p>
+
+                <div class="metric-item">
+                    <h3><i class="fas fa-tachometer-alt"></i> Métricas de Desempenho Cultural</h3>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-retweet"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h4>Taxa de Retenção de High-Performers</h4>
+                            <p>Percentual de colaboradores top 20% que permanecem na empresa por mais de 2 anos</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h4>Índice de Colaboração Cross-Area</h4>
+                            <p>Número de projetos envolvendo múltiplas áreas versus projetos isolados</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h4>Velocidade de Decisão</h4>
+                            <p>Tempo médio desde a identificação de oportunidade até a decisão executiva</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metric-item">
+                    <h3><i class="fas fa-clipboard-check"></i> Avaliação Comportamental</h3>
+                    <p>Implemente pesquisas regulares para medir a percepção da cultura:</p>
+                    <ul>
+                        <li><strong>Pesquisa de Clima com Foco Cultural:</strong> A cada 6 meses, avalie como os colaboradores percebem a aplicação dos 4 pilares</li>
+                        <li><strong>Net Promoter Score Interno:</strong> "Você recomendaria nossa empresa como lugar para trabalhar para um amigo qualificado?"</li>
+                        <li><strong>Avaliação 360° Cultural:</strong> Inclua critérios específicos de avaliação dos comportamentos dos pilares culturais</li>
+                    </ul>
+                </div>
+
+                <div class="practical-action">
+                    <strong>Intervalo de Referência:</strong> Estabeleça benchmarks internos e compare a evolução ao longo do tempo. Uma cultura saudável deve mostrar melhoria contínua nestas métricas, com alta retenção de high-performers e aumento da colaboração entre áreas.
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-box">
+                <h3><i class="fas fa-road"></i> Roteiro do Gestor</h3>
+                <ul class="quick-links">
+                    <li><a href="#introducao"><i class="fas fa-play-circle"></i> Comece Aqui</a></li>
+                    <li><a href="#pilares"><i class="fas fa-check-circle"></i> Avalie Seus Pilares</a></li>
+                    <li><a href="#estrategia"><i class="fas fa-chess-board"></i> Defina Estratégia</a></li>
+                    <li><a href="#ferramentas"><i class="fas fa-wrench"></i> Aplique Ferramentas</a></li>
+                    <li><a href="#reputacao"><i class="fas fa-crown"></i> Fortaleça Reputação</a></li>
+                    <li><a href="#realidade"><i class="fas fa-bolt"></i> Enfrente Realidade</a></li>
+                    <li><a href="#impacto"><i class="fas fa-chart-line"></i> Mensure Impacto P&L</a></li>
+                    <li><a href="#legado"><i class="fas fa-mountain"></i> Construa Legado</a></li>
+                    <li><a href="#framework"><i class="fas fa-chess-queen"></i> Use Framework</a></li>
+                    <li><a href="#entrevista"><i class="fas fa-user-plus"></i> Contrate Corretamente</a></li>
+                    <li><a href="#metricas"><i class="fas fa-chart-bar"></i> Meça Resultados</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-box">
+                <h3><i class="fas fa-tachometer-alt"></i> Indicadores de Performance</h3>
+                <div class="kpi-indicator">
+                    <div class="kpi-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="kpi-info">
+                        <h4>Retenção de Talentos</h4>
+                        <p>Taxa de permanência de high-performers acima de 85%</p>
+                    </div>
+                </div>
+                <div class="kpi-indicator">
+                    <div class="kpi-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="kpi-info">
+                        <h4>Colaboração</h4>
+                        <p>+30% projetos cross-area vs. ano anterior</p>
+                    </div>
+                </div>
+                <div class="kpi-indicator">
+                    <div class="kpi-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="kpi-info">
+                        <h4>Velocidade</h4>
+                        <p>Decisões em até 48h para oportunidades críticas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-box">
+                <h3><i class="fas fa-clock"></i> Próximos Passos</h3>
+                <ol style="margin-left: 1.2rem;">
+                    <li>Diagnóstico da cultura atual na sua área</li>
+                    <li>Priorize 2-3 iniciativas de alto impacto</li>
+                    <li>Comunique expectativas claras à equipe</li>
+                    <li>Implemente mudanças progressivas</li>
+                    <li>Meça resultados e ajuste rota</li>
+                </ol>
+            </div>
+
+            <div class="inspiration-box">
+                <p>A cultura correta não é construída com palavras, mas com ações e exemplos consistentes.</p>
+                <p class="author">- Liderança BTG Pactual</p>
+            </div>
+
+            <div class="sidebar-box">
+                <h3><i class="fas fa-exclamation-circle"></i> Lembrete Importante</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>Consistência é fundamental:</strong> A cultura se fortalece com práticas diárias, não com iniciativas pontuais.</p>
+                <p style="font-size: 0.9rem; margin-bottom: 0;"><strong>Liderança pelo exemplo:</strong> Suas ações têm 10x mais impacto que suas palavras.</p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" title="Voltar ao topo"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2025 Silvanio Gois - Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="https://www.silvaniogois.com.br/" target="_blank" class="footer-link">
+                <i class="fas fa-globe"></i> Site
+            </a>
+            <a href="https://wa.me/5513988301094" target="_blank" class="footer-link">
+                <i class="fab fa-whatsapp"></i> Contato
+            </a>
+        </div>
+        <p style="font-size: 0.9rem; opacity: 0.8;">Este guia foi desenvolvido com base no modelo de Partnership do BTG Pactual e em duas décadas de experiência em gestão de alta performance.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Funcionalidade do botão "Voltar ao Topo"
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.onscroll = function() {
+            scrollFunction();
+            updateActiveNavLink();
+        };
+
+        function scrollFunction() {
+            // Mostra o botão quando rolar 300px para baixo
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // Quando clicar, rola suavemente para o topo
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Atualizar link de navegação ativo
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Smooth scrolling para links de navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
